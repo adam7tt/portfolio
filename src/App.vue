@@ -61,7 +61,11 @@ $nord7: #8FBCBB;
 $nord8: #88C0D0;
 $nord9: #81A1C1;
 $nord10: #5E81AC;
-
+$nord11: #BF616A;
+$nord12: #D08770;
+$nord13: #EBCB8B;
+$nord14: #A3BE8C;
+$nord15: #B48EAD;
 
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
 $colors: (

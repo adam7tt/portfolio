@@ -1,21 +1,21 @@
 <template>
-  <div class="app" :class="[isDark ? 'dark' : '' ]">
-    <b-navbar :class="[isDark ? 'is-dracula-background' : 'is-nord4' ]" class="">
+  <div class="wrapper" :style="cssProps">
+    <b-navbar :class="[isDark ? 'is-dracula-background' : 'nord4' ]" class="is-fixed-top">
       <template slot="brand">
         <b-navbar-item tag="router-link" :to="{ path: '/' }">
           <p>Adam Morishita</p>
         </b-navbar-item>
         <b-navbar-item>
-          <div class="field" v-on:click="say()">
+          <div class="field" v-on:click="darkSwitch()">
             <span>🌙</span>
-            <b-switch size="is-small"></b-switch>
+            <b-switch size="is-small" type="is-nord13"></b-switch>
             <span>☀️</span>
           </div>
         </b-navbar-item>
       </template>
       <template slot="end">
-        <b-navbar-item>
-          <a href="#about" v-smooth-scroll>About Me</a>
+        <b-navbar-item :class="[isDark ? 'is-dracula-pink' : 'nord11' ]">
+          <a :class="[isDark ? 'is-dracula-pink' : 'nord11' ]" href="#about" v-smooth-scroll>About Me</a>
         </b-navbar-item>
         <b-navbar-item>
           <a href="#portfolio" v-smooth-scroll>Portfolio</a>
@@ -42,9 +42,9 @@
         </li>
       </ul>
     </div>
-    <!-- Needs a better tagline than I write software -->
+
     <section>
-      <div class="hero is-fullheight is-primary has-background">
+      <div :class="[isDark ? 'is-dracula-purple' : 'nord13']" class="hero is-fullheight has-background">
         <img alt="Los Angeles Skyline" class="hero-background is-transparent" src="https://images.unsplash.com/photo-1533282960533-51328aa49826?ixlib=rb-1.2.1&auto=format&fit=crop&w=2530&q=80" />
         <div class="hero-body">
           <div class="container">
@@ -102,17 +102,17 @@
       </div>
     </section>
     <section class="mt-6" id="contact">
-      <h1 class="title is-2 is-bold has-text-centered has-text-dracula-foreground">Get in touch</h1>
-      <p class=" has-text-centered has-text-dracula-foreground">I am currently looking for new opportunities, please
+      <h1 :class="[isDark ? 'has-text-dracula-foreground ' : 'has-text-nord0' ]" class="title is-2 is-bold has-text-centered">Get in touch</h1>
+      <p :class="[isDark ? 'has-text-dracula-foreground ' : 'has-text-nord0' ]" class=" has-text-centered">I am currently looking for new opportunities, please
         feel free to send me a message and I'll try to get back to you!</p>
-      <div class="box has-text-centered has-background-dracula-background">
+      <div :class="[isDark ? ' has-background-dracula-background' : 'nord4' ]" class="mt-6 has-text-centered">
         <a href="mailto:adam7tt@gmail.com">
           <b-button type="is-dracula-purple is-large" outlined><h1>Contact</h1></b-button>
         </a>
       </div>
     </section>
     <section>
-        <footer class="footer mt-6 has-text-dracula-foreground has-background-dracula-background">
+        <footer :class="[isDark ? ' has-background-dracula-background has-text-dracula-foreground' : 'nord4 has-text-nord0' ]" class="footer mt-6">
             <div class="columns">
                 <div class="column is-4 is-offset-4">
                     <div class="level sized">
@@ -142,14 +142,30 @@
 <script>
   export default {
     name: 'Home',
-    components: {},
+    components: {
+
+    },
     methods: {
-      say() {
+      darkSwitch(){
         this.isDark = !this.isDark
+        if(this.isDark){
+        this.color = '#282a36'
+        } else {
+          this.color = '#D8DEE9'        
+          }
+      }
+    },
+    computed: {
+      cssProps(){
+        return{
+          '--test': this.num + 'px',
+          '--color': this.color
+        }
       }
     },
     data() {
       return {
+        color: '#282a36',
         isDark: true,
         projects: [{
             title: 'Realtime Chat',
@@ -157,7 +173,7 @@
             used: 'Javascript, Node.js, Socket.io, HTML, CSS',
             heroku: 'https://cryptic-retreat-98541.herokuapp.com/',
             github: 'https://github.com/adam7tt/socketio-chat-app',
-            gif: 'chatappsped.gif'
+            gif: 'images/chatappsped.gif'
 
           },
           {
@@ -166,7 +182,7 @@
             used: 'Javascript, Vuejs, Nodejs, Express, MongoDB, Mongoose, Jest, HTML, CSS, Buefy',
             heroku: '',
             github: '',
-            gif: 'chatappsped.gif'
+            gif: 'images/chatappsped.gif'
           },
           {
             title: 'Weather Report',
@@ -174,7 +190,7 @@
             used: 'Javascript, Nodejs, Express, HTML, CSS',
             heroku: '',
             github: '',
-            gif: 'chatappsped.gif'
+            gif: 'images/chatappsped.gif'
           },
         ],
       }
@@ -185,9 +201,10 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Open+Sans&display=swap');
 
+  html,
   body,
   section {
-    background-color: #282a36
+    background-color: var(--color)
   }
 
   h1 {
@@ -198,20 +215,34 @@
     font-family: 'Open Sans', sans-serif;
   }
 
-
-  .app {
-
-  }
-  .dark{
-
-  }
-
   @media screen and (max-width: 1408px) {
     .side__StyledContainer {
       display: none
     }
   }
 
+    .wrapper{
+    z-index: -10;
+    background-color: var(--color)
+  }
+
+  p.test-class{
+    font-size: var(--test)
+  }
+
+  .nord4{
+    background-color: #D8DEE9 !important;
+  }
+
+  .nord11{
+    color: #BF616A !important;
+    /* background-color: #BF616A !important; */
+  }
+
+  .nord13{
+    color: #EBCB8B !important;
+    background-color: #EBCB8B !important;
+  }
 
   .side__StyledContainer {
     -webkit-font-smoothing: antialiased;
@@ -232,7 +263,7 @@
   .social__StyledList {
     -webkit-font-smoothing: antialiased;
     line-height: 1.3;
-    font-family: Calibre, "San Francisco", "SF Pro Text", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+    /* font-family: Calibre, "San Francisco", "SF Pro Text", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif; */
     font-size: 20px;
     color: rgb(168, 178, 209);
     box-sizing: inherit;
@@ -257,7 +288,7 @@
   .social__StyledLink {
     -webkit-font-smoothing: antialiased;
     line-height: 1.3;
-    font-family: Calibre, "San Francisco", "SF Pro Text", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+    /* font-family: Calibre, "San Francisco", "SF Pro Text", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif; */
     font-size: 20px;
     list-style: none;
     box-sizing: inherit;

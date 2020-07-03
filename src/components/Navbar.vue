@@ -40,9 +40,7 @@ export default {
         }
     },
     methods: {
-        say: function () {
-            this.isDark = !this.isDark
-        }
+
     }
 }
 </script>
