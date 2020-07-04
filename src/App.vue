@@ -59,6 +59,7 @@ $nord4: #D8DEE9;
 $nord5: #E5E9F0;
 $nord5-invert: findColorInvert($nord5);
 $nord6: #ECEFF4;
+$nord6-invert: findColorInvert($nord6);
 $nord7: #8FBCBB;
 $nord8: #88C0D0;
 $nord9: #81A1C1;
@@ -67,6 +68,7 @@ $nord11: #BF616A;
 $nord12: #D08770;
 $nord12-invert: findColorInvert($nord12);
 $nord13: #EBCB8B;
+$nord13-invert: findColorInvert($nord13);
 $nord14: #A3BE8C;
 $nord15: #B48EAD;
 
@@ -95,7 +97,9 @@ $colors: (
     "dracula-yellow":($dracula-yellow, $dracula-yellow-invert),
     "nord0": ($nord0, $nord0-invert),
     "nord5": ($nord5, $nord5-invert),
-    "nord12": ($nord12, $nord12-invert)
+    "nord6": ($nord6, $nord6-invert),
+    "nord12": ($nord12, $nord12-invert),
+    "nord13": ($nord13, $nord13-invert)
 );
 // Links
 $link: $primary;

@@ -1,22 +1,15 @@
 <template>
   <div class="wrapper" :style="cssProps">
-    <b-navbar :class="[isDark ? 'is-dracula-background' : 'nord4' ]" class="is-fixed-top">
+    <b-navbar :class="[isDark ? 'is-dracula-background' : 'is-nord6' ]" class="is-fixed-top">
       <template slot="brand">
         <b-navbar-item tag="router-link" :to="{ path: '/' }">
           <p>Adam Morishita</p>
         </b-navbar-item>
-        <!-- <b-navbar-item>
-          <div class="field" v-on:click="darkSwitch()">
-            <span>🌙</span>
-            <b-switch size="is-small" type="is-nord13"></b-switch>
-            <span>☀️</span>
-          </div>
-        </b-navbar-item> -->
-      <div class="field custom-nav" v-on:click="darkSwitch()">
-            <span>🌙</span>
-            <b-switch size="is-small" type="is-nord12"></b-switch>
-            <span>☀️</span>
-      </div>
+        <div class="field custom-nav" v-on:click="darkSwitch()">
+          <span>🌙</span>
+          <b-switch size="is-small" type="is-nord12"></b-switch>
+          <span>☀️</span>
+        </div>
       </template>
       <template slot="end">
         <b-navbar-item>
@@ -49,23 +42,22 @@
     </div>
 
     <section>
-      <div :class="[isDark ? 'is-dracula-purple' : 'nord13']" class="hero is-fullheight has-background">
+      <div :class="[isDark ? 'is-dracula-purple' : 'is-nord13']" class="hero is-fullheight has-background">
         <img alt="Los Angeles Skyline" class="hero-background is-transparent" src="https://images.unsplash.com/photo-1533282960533-51328aa49826?ixlib=rb-1.2.1&auto=format&fit=crop&w=2530&q=80" />
         <div class="hero-body">
           <div class="container">
-            <h1 class="subtitle is-3">Hello, my name is</h1>
-            <h1 class="title is-1">Adam Morishita</h1>
+            <h1 class="subtitle" style="font-size: 30px">Hello, my name is</h1>
+            <h1 class="title" style="font-size: 80px">Adam Morishita</h1>
           </div>
         </div>
       </div>
     </section>
     <section class="mt-6" id="about">
       <div class="container">
-        <h1 :class="[isDark ? 'has-text-dracula-foreground ' : 'has-text-nord0' ]"
-          class="title is-2 is-bold has-text-centered">About Me</h1>
+        <h1 class="title is-2 is-bold has-text-centered">About Me</h1>
         <p :class="[isDark ? 'has-text-dracula-foreground ' : 'has-text-nord0' ]" class="has-text-centered">I'm Adam Morishita, a software
           engineer based in Los Angeles, California.
-          I enjoy developing software tools that helps people fulfill their needs. I've had to chance to write code for
+          I enjoy developing software tools that help people fulfill their needs. I've had to chance to write code for
           everything from automation scripts to fullstack web applications and even a few mobile
           applications.
           I'm a recent graduate from <a href="https://www.csun.edu/">California State University Northridge</a> where I
@@ -75,16 +67,15 @@
           I currently work for <a href="https://gsep.pepperdine.edu/"> Pepperdine University's Graduate School of
             Education and Psychology</a>. Here are a few of the programming languages and technologies I use:
         </p>
-        <p :class="[isDark ? 'has-text-dracula-foreground ' : 'has-text-nord0' ]" class="has-text-weight-light has-text-centered">
+        <p class="has-text-weight-light has-text-centered">
           Javascript, Python, Node.js, Express, Vue.js, SQL, MongoDB, Django, Selenium, HTML, CSS</p>
       </div>
     </section>
     <section class="mt-6" id="portfolio">
       <div class="container">
-        <h1 :class="[isDark ? 'has-text-dracula-foreground ' : 'has-text-nord0' ]" class="title is-2 has-text-centered"
+        <h1 class="title is-2 has-text-centered"
           id="portfolio">Some Things I've Built</h1>
-        <div v-for="(project, index) in projects" :key="index"
-          :class="[isDark ? 'has-text-dracula-foreground ' : 'has-text-nord0' ]" class="columns mt-2">
+        <div v-for="(project, index) in projects" :key="index" class="columns mt-2">
           <div class="column is-one-third has-text-centered">
             <a :href=project.heroku>
               <vue-freezeframe class="is-16by9 mx-2" :src=project.gif>
@@ -107,17 +98,17 @@
       </div>
     </section>
     <section class="mt-6" id="contact">
-      <h1 :class="[isDark ? 'has-text-dracula-foreground ' : 'has-text-nord0' ]" class="title is-2 is-bold has-text-centered">Get in touch</h1>
-      <p :class="[isDark ? 'has-text-dracula-foreground ' : 'has-text-nord0' ]" class=" has-text-centered">I am currently looking for new opportunities, please
+      <h1 class="title is-2 is-bold has-text-centered">Get in touch</h1>
+      <p class=" has-text-centered">I am currently looking for new opportunities, please
         feel free to send me a message and I'll try to get back to you!</p>
-      <div :class="[isDark ? ' has-background-dracula-background' : 'nord4' ]" class="mt-6 has-text-centered">
+      <div :class="[isDark ? ' has-background-dracula-background' : 'has-background-nord6' ]" class="mt-6 has-text-centered">
         <a href="mailto:adam7tt@gmail.com">
-          <b-button :type="[isDark ? 'is-dracula-purple is-large' : 'is-nord12 is-large' ]" outlined><h1>Contact</h1></b-button>
+          <b-button :class="[isDark ? 'is-dracula-purple' : 'is-nord12' ]" class="is-large" outlined><h1>Contact</h1></b-button>
         </a>
       </div>
     </section>
     <section>
-        <footer :class="[isDark ? ' has-background-dracula-background has-text-dracula-foreground' : 'nord4 has-text-nord0' ]" class="footer mt-6">
+        <footer :class="[isDark ? ' has-background-dracula-background' : 'has-background-nord6' ]" class="footer mt-6">
             <div class="columns">
                 <div class="column is-4 is-offset-4">
                     <div class="level sized">
@@ -156,18 +147,20 @@
         if(this.isDark){
         this.color = '#282a36'
         this.linkColor = '#bd93f9'
+        this.textColor = '#f8f8f2'
         } else {
-          this.color = '#D8DEE9'        
-          this.linkColor = '#BF616A'
+          this.color = '#ECEFF4'        
+          this.linkColor = '#D08770'
+          this.textColor = '#3B4252'
           }
       }
     },
     computed: {
       cssProps(){
         return{
-          '--test': this.num + 'px',
           '--color': this.color,
-          '--link-color': this.linkColor
+          '--link-color': this.linkColor,
+          '--text-color': this.textColor
         }
       }
     },
@@ -175,6 +168,7 @@
       return {
         color: '#282a36',
         linkColor: '#bd93f9',
+        textColor: '#f8f8f2',
         isDark: true,
         projects: [{
             title: 'Realtime Chat',
@@ -270,23 +264,22 @@ section {
 
 .wrapper {
   z-index: -10;
-  background-color: var(--color)
+  background-color: var(--color);
 }
 
 .wrapper a{
-  color: var(--link-color)
+  color: var(--link-color);
 }
 
-.wrapper .navbar-menu{
-  background-color: var(--color)
+.wrapper h1,
+.wrapper p {
+  color : var(--text-color)
 }
 
-.wrapper .navbar-item.is-active{
-  background-color: var(--color)
-}
-
-.wrapper a.navbar-item {
-  background-color: var(--color)
+.wrapper .navbar-menu,
+.wrapper a.navbar-item,
+.wrapper .nav-item.is-active {
+  background-color: var(--color);
 }
 
 .custom-nav {
@@ -297,23 +290,9 @@ section {
   font-size: 40rem;
 }
 
-.nord4 {
-  background-color: #D8DEE9 !important;
-}
-
-.nord11 {
-  color: #BF616A !important;
-}
-
-.nord13 {
-  color: #EBCB8B !important;
-  background-color: #EBCB8B !important;
-}
-
 .side__StyledContainer {
   -webkit-font-smoothing: antialiased;
   line-height: 1.3;
-  font-family: Calibre, "San Francisco", "SF Pro Text", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
   font-size: 20px;
   box-sizing: inherit;
   width: 40px;
@@ -345,7 +324,7 @@ section {
   display: block;
   width: 1px;
   height: 80px;
-  background-color: rgb(168, 178, 209);
+  background-color: var(--link-color);
   margin: 0px auto;
 }
 
@@ -388,13 +367,13 @@ section {
 
 @media screen and (max-width: 1408px) {
   .footer {
-    display: block
+    display: block;
   }
 }
 
 @media screen and (max-width: 1408px) {
   .side__StyledContainer {
-    display: none
+    display: none;
   }
 }
 
