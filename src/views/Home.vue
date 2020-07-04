@@ -5,17 +5,22 @@
         <b-navbar-item tag="router-link" :to="{ path: '/' }">
           <p>Adam Morishita</p>
         </b-navbar-item>
-        <b-navbar-item>
+        <!-- <b-navbar-item>
           <div class="field" v-on:click="darkSwitch()">
             <span>🌙</span>
             <b-switch size="is-small" type="is-nord13"></b-switch>
             <span>☀️</span>
           </div>
-        </b-navbar-item>
+        </b-navbar-item> -->
+      <div class="field custom-nav" v-on:click="darkSwitch()">
+            <span>🌙</span>
+            <b-switch size="is-small" type="is-nord12"></b-switch>
+            <span>☀️</span>
+      </div>
       </template>
       <template slot="end">
-        <b-navbar-item :class="[isDark ? 'is-dracula-pink' : 'nord11' ]">
-          <a :class="[isDark ? 'is-dracula-pink' : 'nord11' ]" href="#about" v-smooth-scroll>About Me</a>
+        <b-navbar-item>
+          <a href="#about" v-smooth-scroll>About Me</a>
         </b-navbar-item>
         <b-navbar-item>
           <a href="#portfolio" v-smooth-scroll>Portfolio</a>
@@ -32,13 +37,13 @@
     <div orientation="left" class="side__StyledContainer">
       <ul class="social__StyledList">
         <li>                            
-            <a href="https://www.google.com" class="social__StyledLink"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/adam7tt" class="social__StyledLink"><i class="fab fa-github"></i></a>
         </li>
         <li>                            
-            <a href="https://www.google.com" class="social__StyledLink"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.linkedin.com/in/adam-morishita-19a418170/" class="social__StyledLink"><i class="fab fa-linkedin-in"></i></a>
         </li>
         <li>                            
-            <a href="https://www.google.com" class="social__StyledLink"><i class="fas fa-envelope"></i></a>
+            <a href="mailto:adam7tt@gmail.com" class="social__StyledLink"><i class="fas fa-envelope"></i></a>
         </li>
       </ul>
     </div>
@@ -82,7 +87,7 @@
           :class="[isDark ? 'has-text-dracula-foreground ' : 'has-text-nord0' ]" class="columns mt-2">
           <div class="column is-one-third has-text-centered">
             <a :href=project.heroku>
-              <vue-freezeframe class="is-16by9 ml-4" :src=project.gif>
+              <vue-freezeframe class="is-16by9 mx-2" :src=project.gif>
               </vue-freezeframe>
             </a>
             <p class="has-text-weight-light">
@@ -95,7 +100,7 @@
           <div class="column is-two-thirds">
             <h1 class="is-size-4 ">{{ project.title }}</h1>
             <p>{{ project.description }}</p>
-            <h1 class="is-size-4" >Technologies Used</h1>
+            <h1 class="is-size-4" >What I Used</h1>
             <p>{{ project.used }}</p>
           </div>
         </div>
@@ -107,7 +112,7 @@
         feel free to send me a message and I'll try to get back to you!</p>
       <div :class="[isDark ? ' has-background-dracula-background' : 'nord4' ]" class="mt-6 has-text-centered">
         <a href="mailto:adam7tt@gmail.com">
-          <b-button type="is-dracula-purple is-large" outlined><h1>Contact</h1></b-button>
+          <b-button :type="[isDark ? 'is-dracula-purple is-large' : 'is-nord12 is-large' ]" outlined><h1>Contact</h1></b-button>
         </a>
       </div>
     </section>
@@ -118,17 +123,17 @@
                     <div class="level sized">
                         <div class="level-item has-text-centered">
                             <font size="20">
-                                <a href="https://www.google.com"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/adam7tt"><i class="fab fa-github"></i></a>
                             </font>
                         </div>
                         <div class="level-item has-text-centered">
                             <font size="20">
-                                <a href="https://www.google.com"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.linkedin.com/in/adam-morishita-19a418170/"><i class="fab fa-linkedin-in"></i></a>
                             </font>
                         </div>
                         <div class="level-item has-text-centered">
                         <font size="20">
-                            <a href="https://www.google.com"><i class="fas fa-envelope"></i></a>
+                            <a href="mailto:adam7tt@gmail.com"><i class="fas fa-envelope"></i></a>
                         </font>
                     </div>
                 </div>     
@@ -150,8 +155,10 @@
         this.isDark = !this.isDark
         if(this.isDark){
         this.color = '#282a36'
+        this.linkColor = '#bd93f9'
         } else {
           this.color = '#D8DEE9'        
+          this.linkColor = '#BF616A'
           }
       }
     },
@@ -159,13 +166,15 @@
       cssProps(){
         return{
           '--test': this.num + 'px',
-          '--color': this.color
+          '--color': this.color,
+          '--link-color': this.linkColor
         }
       }
     },
     data() {
       return {
         color: '#282a36',
+        linkColor: '#bd93f9',
         isDark: true,
         projects: [{
             title: 'Realtime Chat',
@@ -181,150 +190,212 @@
             description: 'Task tracker is a task management system built from the ground up to allow users to create and manage their own daily tasks.',
             used: 'Javascript, Vuejs, Nodejs, Express, MongoDB, Mongoose, Jest, HTML, CSS, Buefy',
             heroku: '',
-            github: '',
+            github: 'https://github.com/adam7tt/task-app',
             gif: 'images/chatappsped.gif'
           },
           {
             title: 'Weather Report',
             description: 'A weather application that uses the weatherstack API, geocoding, and reverse geocoding to allow a user to query for real time weather information around the world',
             used: 'Javascript, Nodejs, Express, HTML, CSS',
-            heroku: '',
-            github: '',
-            gif: 'images/chatappsped.gif'
+            heroku: 'https://morishita-weather-app.herokuapp.com/',
+            github: 'https://github.com/adam7tt/weatherstack-app',
+            gif: 'images/weather.png'
           },
+          {
+            title: 'Internation Community for Collaborative Content Creation',
+            description: 'A SPA created for a client to serve as a hub for an international research project and youth learning initative. The application serves as a collection of brochure pages and as a knowledge repository for the youth participants. Organization heads have access to update a student portal via a headless CMS (ButterCMS) that has been integrated in the project which the student portal then consumes.',
+            used: 'Javascript, Vue.js, ButterCMS, HTML, CSS',
+            heroku: 'https://ic4.site/',
+            github: '',
+            gif: 'images/ic4.png'
+          },
+          {
+            title: 'Ninja Smoothies',
+            description: 'Ninja Smoothies is a Vue.js application that uses Google\'s Firebase. Ninja smoothies allows users to interact with a virtual smoothie recipe making platform where they can save combinations of ingredients. Users can create, update, and delete their recipes. The application interacts with Firebase\'s Firestore databases for persistent storage.',
+            used: 'Javascript, Vue.js, Firebase, Firestore, HTML, CSS',
+            heroku: 'https://wizardly-khorana-34cc51.netlify.app/',
+            github: '',
+            gif: 'images/smoothies.png'
+          },
+          {
+            title: 'Stocktrader',
+            description: 'Stocktrader is a game-ified stock trading application where users can purchase stock in a company whose valuation will randomly fluctuate. Users can cash out at the end of a day or hold onto their stock in hopes for a bigger payday.',
+            used: 'Javascript, Vue.js, HTML, CSS',
+            heroku: 'https://morishita-stocktrader.netlify.app/',
+            github: '',
+            gif: 'images/stocktrader.png'
+          },
+          {
+            title: 'Monster Slayer',
+            description: 'Monster slayer is a simple game where the user plays a hero facing a vile monster and perform a variety of moves to defeat it.',
+            used: 'Javascript, Vue.js, HTML, CSS',
+            heroku: 'https://morishita-monster-slayer.netlify.app/',
+            github: '',
+            gif: 'images/monsterhunter.png'
+            
+          }
+          // {
+          //   title: 'Ninja chat',
+          //   description: 'Ninja chat emulates a real time chatroom where users can connect and talk with one another.',
+          //   used: 'Javascript, Vue.js, HTML, CSS',
+          //   heroku: 'https://morishita-ninjachat.netlify.app/',
+          //   github: '',
+          //   gif: 'images/ninachat.png'
+          // }
         ],
       }
     },
   }
 </script>
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Open+Sans&display=swap');
+<style>@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Open+Sans&display=swap');
 
-  html,
-  body,
-  section {
-    background-color: var(--color)
-  }
+html,
+body,
+section {
+  background-color: var(--color)
+}
 
-  h1 {
-    font-family: 'Inconsolata', monospace;
-  }
+h1 {
+  font-family: 'Inconsolata', monospace;
+}
 
-  p {
-    font-family: 'Open Sans', sans-serif;
-  }
+p {
+  font-family: 'Open Sans', sans-serif;
+}
 
-  @media screen and (max-width: 1408px) {
-    .side__StyledContainer {
-      display: none
-    }
-  }
+section {
+  padding-bottom: 100px;
+}
 
-    .wrapper{
-    z-index: -10;
-    background-color: var(--color)
-  }
+.wrapper {
+  z-index: -10;
+  background-color: var(--color)
+}
 
-  p.test-class{
-    font-size: var(--test)
-  }
+.wrapper a{
+  color: var(--link-color)
+}
 
-  .nord4{
-    background-color: #D8DEE9 !important;
-  }
+.wrapper .navbar-menu{
+  background-color: var(--color)
+}
 
-  .nord11{
-    color: #BF616A !important;
-    /* background-color: #BF616A !important; */
-  }
+.wrapper .navbar-item.is-active{
+  background-color: var(--color)
+}
 
-  .nord13{
-    color: #EBCB8B !important;
-    background-color: #EBCB8B !important;
-  }
+.wrapper a.navbar-item {
+  background-color: var(--color)
+}
 
-  .side__StyledContainer {
-    -webkit-font-smoothing: antialiased;
-    line-height: 1.3;
-    font-family: Calibre, "San Francisco", "SF Pro Text", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
-    font-size: 20px;
-    box-sizing: inherit;
-    width: 40px;
-    position: fixed;
-    bottom: 0px;
-    left: 40px;
-    right: auto;
-    z-index: 10;
-    color: rgb(168, 178, 209);
-  }
+.custom-nav {
+  margin-top: 0.75em;
+}
 
+.hero-name{
+  font-size: 40rem;
+}
 
-  .social__StyledList {
-    -webkit-font-smoothing: antialiased;
-    line-height: 1.3;
-    /* font-family: Calibre, "San Francisco", "SF Pro Text", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif; */
-    font-size: 20px;
-    color: rgb(168, 178, 209);
-    box-sizing: inherit;
-    display: flex;
-    flex-direction: column;
-    -webkit-box-align: center;
-    align-items: center;
-    padding: 0px;
-    margin: 0px;
-    list-style: none;
-  }
+.nord4 {
+  background-color: #D8DEE9 !important;
+}
 
-  .social__StyledList::after {
-    content: "";
-    display: block;
-    width: 1px;
-    height: 80px;
-    background-color: rgb(168, 178, 209);
-    margin: 0px auto;
-  }
+.nord11 {
+  color: #BF616A !important;
+}
 
-  .social__StyledLink {
-    -webkit-font-smoothing: antialiased;
-    line-height: 1.3;
-    /* font-family: Calibre, "San Francisco", "SF Pro Text", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif; */
-    font-size: 20px;
-    list-style: none;
-    box-sizing: inherit;
-    display: inline-block;
-    text-decoration-skip-ink: auto;
-    color: inherit;
-    position: relative;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-    padding: 10px;
-  }
+.nord13 {
+  color: #EBCB8B !important;
+  background-color: #EBCB8B !important;
+}
 
-  .hero.has-background {
-    position: relative;
-    overflow: hidden;
-  }
+.side__StyledContainer {
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.3;
+  font-family: Calibre, "San Francisco", "SF Pro Text", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-size: 20px;
+  box-sizing: inherit;
+  width: 40px;
+  position: fixed;
+  bottom: 0px;
+  left: 40px;
+  right: auto;
+  z-index: 10;
+  color: rgb(168, 178, 209);
+}
 
-  .hero-background {
-    position: absolute;
-    object-fit: cover;
-    object-position: center center;
-    width: 100%;
-    height: 100%;
-  }
+.social__StyledList {
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.3;
+  font-size: 20px;
+  color: rgb(168, 178, 209);
+  box-sizing: inherit;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
 
-  .hero-background.is-transparent {
-    opacity: 0.4;
-  }
+.social__StyledList::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 80px;
+  background-color: rgb(168, 178, 209);
+  margin: 0px auto;
+}
 
-  .footer{
-    display:none;
-  }
+.social__StyledLink {
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.3;
+  font-size: 20px;
+  list-style: none;
+  box-sizing: inherit;
+  display: inline-block;
+  text-decoration-skip-ink: auto;
+  color: inherit;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  padding: 10px;
+}
+
+.hero.has-background {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-background.is-transparent {
+  opacity: 0.4;
+}
+
+.footer {
+  display: none;
+}
+
 @media screen and (max-width: 1408px) {
   .footer {
-      display:block
+    display: block
   }
 }
+
+@media screen and (max-width: 1408px) {
+  .side__StyledContainer {
+    display: none
+  }
+}
+
 </style>

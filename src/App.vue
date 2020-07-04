@@ -51,11 +51,13 @@ $dracula-red-invert: findColorInvert($dracula-red);
 $dracula-yellow: #f1fa8c;
 $dracula-yellow-invert: findColorInvert($dracula-yellow);
 $nord0: #2E3440;
+$nord0-invert: findColorInvert($nord0);
 $nord1: #3B4252;
 $nord2: #434C5E;
 $nord3: #4C566A;
 $nord4: #D8DEE9;
 $nord5: #E5E9F0;
+$nord5-invert: findColorInvert($nord5);
 $nord6: #ECEFF4;
 $nord7: #8FBCBB;
 $nord8: #88C0D0;
@@ -63,6 +65,7 @@ $nord9: #81A1C1;
 $nord10: #5E81AC;
 $nord11: #BF616A;
 $nord12: #D08770;
+$nord12-invert: findColorInvert($nord12);
 $nord13: #EBCB8B;
 $nord14: #A3BE8C;
 $nord15: #B48EAD;
@@ -89,7 +92,10 @@ $colors: (
     "dracula-pink": ($dracula-pink, $dracula-pink-invert),
     "dracula-purple": ($dracula-purple, $dracula-purple-invert),
     "dracula-red": ($dracula-red, $dracula-red-invert),
-    "dracula-yellow":($dracula-yellow, $dracula-yellow-invert)
+    "dracula-yellow":($dracula-yellow, $dracula-yellow-invert),
+    "nord0": ($nord0, $nord0-invert),
+    "nord5": ($nord5, $nord5-invert),
+    "nord12": ($nord12, $nord12-invert)
 );
 // Links
 $link: $primary;
