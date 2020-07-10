@@ -183,9 +183,9 @@
             title: 'Task Tracker',
             description: 'Task tracker is a task management system built from the ground up to allow users to create and manage their own daily tasks.',
             used: 'Javascript, Vuejs, Nodejs, Express, MongoDB, Mongoose, Jest, HTML, CSS, Buefy',
-            heroku: '',
+            heroku: 'https://agitated-bhabha-e2c51e.netlify.app/',
             github: 'https://github.com/adam7tt/task-app',
-            gif: 'images/chatappsped.gif'
+            gif: 'images/taskr.png'
           },
           {
             title: 'Weather Report',
@@ -198,7 +198,7 @@
           {
             title: 'Internation Community for Collaborative Content Creation',
             description: 'A SPA created for a client to serve as a hub for an international research project and youth learning initative. The application serves as a collection of brochure pages and as a knowledge repository for the youth participants. Organization heads have access to update a student portal via a headless CMS (ButterCMS) that has been integrated in the project which the student portal then consumes.',
-            used: 'Javascript, Vue.js, ButterCMS, HTML, CSS',
+            used: 'Javascript, Vue.js, ButterCMS, Bootstrap, HTML, CSS',
             heroku: 'https://ic4.site/',
             github: '',
             gif: 'images/ic4.png'
