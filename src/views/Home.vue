@@ -5,9 +5,9 @@
         <b-navbar-item tag="router-link" :to="{ path: '/' }">
           <p>Adam Morishita</p>
         </b-navbar-item>
-        <div class="field custom-nav" v-on:click="darkSwitch()">
+        <div class="field custom-nav">
           <span>🌙</span>
-          <b-switch size="is-small" type="is-nord12"></b-switch>
+          <b-switch @click.native="darkSwitch()" size="is-small" type="is-nord12"></b-switch>
           <span>☀️</span>
         </div>
       </template>
