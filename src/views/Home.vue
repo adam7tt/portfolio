@@ -187,22 +187,22 @@
             github: 'https://github.com/adam7tt/task-app',
             gif: 'images/taskr.png'
           },
-          {
-            title: 'Weather Report',
-            description: 'A weather application that uses the weatherstack API, geocoding, and reverse geocoding to allow a user to query for real time weather information around the world',
-            used: 'Javascript, Nodejs, Express, HTML, CSS',
-            heroku: 'https://morishita-weather-app.herokuapp.com/',
-            github: 'https://github.com/adam7tt/weatherstack-app',
-            gif: 'images/weather.png'
-          },
-          {
-            title: 'Internation Community for Collaborative Content Creation',
-            description: 'A SPA created for a client to serve as a hub for an international research project and youth learning initative. The application serves as a collection of brochure pages and as a knowledge repository for the youth participants. Organization heads have access to update a student portal via a headless CMS (ButterCMS) that has been integrated in the project which the student portal then consumes.',
-            used: 'Javascript, Vue.js, ButterCMS, Bootstrap, HTML, CSS',
-            heroku: 'https://ic4.site/',
-            github: '',
-            gif: 'images/ic4.png'
-          },
+          // {
+          //   title: 'Weather Report',
+          //   description: 'A weather application that uses the weatherstack API, geocoding, and reverse geocoding to allow a user to query for real time weather information around the world',
+          //   used: 'Javascript, Nodejs, Express, HTML, CSS',
+          //   heroku: 'https://morishita-weather-app.herokuapp.com/',
+          //   github: 'https://github.com/adam7tt/weatherstack-app',
+          //   gif: 'images/weather.png'
+          // },
+          // {
+          //   title: 'Internation Community for Collaborative Content Creation',
+          //   description: 'A SPA created for a client to serve as a hub for an international research project and youth learning initative. The application serves as a collection of brochure pages and as a knowledge repository for the youth participants. Organization heads have access to update a student portal via a headless CMS (ButterCMS) that has been integrated in the project which the student portal then consumes.',
+          //   used: 'Javascript, Vue.js, ButterCMS, Bootstrap, HTML, CSS',
+          //   heroku: 'https://ic4.site/',
+          //   github: '',
+          //   gif: 'images/ic4.png'
+          // },
           {
             title: 'Ninja Smoothies',
             description: 'Ninja Smoothies is a Vue.js application that uses Google\'s Firebase. Ninja smoothies allows users to interact with a virtual smoothie recipe making platform where they can save combinations of ingredients. Users can create, update, and delete their recipes. The application interacts with Firebase\'s Firestore databases for persistent storage.',
@@ -219,15 +219,15 @@
             github: '',
             gif: 'images/stocktrader.png'
           },
-          {
-            title: 'Monster Slayer',
-            description: 'Monster slayer is a simple game where the user plays a hero facing a vile monster and perform a variety of moves to defeat it.',
-            used: 'Javascript, Vue.js, HTML, CSS',
-            heroku: 'https://morishita-monster-slayer.netlify.app/',
-            github: '',
-            gif: 'images/monsterhunter.png'
+          // {
+          //   title: 'Monster Slayer',
+          //   description: 'Monster slayer is a simple game where the user plays a hero facing a vile monster and perform a variety of moves to defeat it.',
+          //   used: 'Javascript, Vue.js, HTML, CSS',
+          //   heroku: 'https://morishita-monster-slayer.netlify.app/',
+          //   github: '',
+          //   gif: 'images/monsterhunter.png'
             
-          }
+          // }
           // {
           //   title: 'Ninja chat',
           //   description: 'Ninja chat emulates a real time chatroom where users can connect and talk with one another.',
