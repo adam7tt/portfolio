@@ -17,13 +17,8 @@ export default {
 </script>
 
 <style lang="scss">
-
-
-
-// Import Bulma's core
 @import "~bulma/sass/utilities/_all";
 
-// Set your colors
 $primary: #8c67ef;
 $primary-invert: findColorInvert($primary);
 $twitter: #4099FF;
@@ -72,7 +67,6 @@ $nord13-invert: findColorInvert($nord13);
 $nord14: #A3BE8C;
 $nord15: #B48EAD;
 
-// Setup $colors to use as bulma classes (e.g. 'is-twitter')
 $colors: (
     "white": ($white, $black),
     "black": ($black, $white),
@@ -101,12 +95,11 @@ $colors: (
     "nord12": ($nord12, $nord12-invert),
     "nord13": ($nord13, $nord13-invert)
 );
-// Links
+
 $link: $primary;
 $link-invert: $primary-invert;
 $link-focus-border: $primary;
 
-// Import Bulma and Buefy styles
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
 </style>
