@@ -5,6 +5,7 @@
 </template>
 
 <script>
+//test
 import Navbar from '@/components/Navbar.vue'
 import Foot from '@/components/Foot.vue'
 
